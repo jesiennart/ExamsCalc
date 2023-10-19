@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/d7108e48b2.js"
+			crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./test_calc.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <Header>
+            <h1>Test Kalkulator</h1>
+        </Header>
+        <main>
+            <div class="form">
+                <label for="input-name">Imię i nazwisko:</label>
+                <input type="text" id="input-name" class="input-name" placeholder="Podaj imię i nazwisko">
+            </div>
+            <div class="form">
+                <label for="testmax">Maksymalna liczba punktów:</label>
+                <input type="text" id="testmax" class="textmax" placeholder="Podaj maksymalną liczbę punktów">
+            </div>
+            <div class="form">
+                <label for="score-student">Wynik ucznia:</label>
+                <input type="text" id="score-student" class="score-student" placeholder="Podaj liczbę uzyskanych punktów">
+            </div>
+            <div class="error">Wypełnij wszystkie pola</div>
+            <div class="count">
+                <button class="btn-count">Oblicz</button>
+               <div class="score-percent">
+                <p>Wynik w procentach: <span class="final-score"></span></p>
+                </div>  
+            </div>
+            <div class="add">
+                <button class="btn-add">Dodaj</button>
+            </div>
+        </main>
+        <ol class="archives">Lista Wyników:</ol>
+        <div class="add">
+            <button class="btn-med">Mediana: <span class="medium"></span></button>
+        </div>
+        <div class="score"></div><!--tag do obliczania mediany-->
+        <div class="cross"><i class="fa-solid fa-xmark"></i></div>
+    </div>
+
+
+    <script src="./test_calc.js"></script>
+</body>
+</html>

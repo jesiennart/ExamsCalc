@@ -36,7 +36,9 @@ const addArch = (result) => {
     li.innerHTML = `<button>${nameUser.value} - Wynik: ${scoreStudent.value} punktów. Procent: ${result.toFixed(1)}%. <i class="fa-solid fa-xmark"></i></button>`;
     arch.appendChild(li);
     let arrList = Array.from(arch.children, li => li.innerHTML)//tablica z archiwum
-    
+    scorePercent.textContent = '';
+    nameUser.value = '';
+    scoreStudent.value = '';
     
     let score = result.toFixed(1);
     let arrScore = Array.from(score);
@@ -70,7 +72,7 @@ const addArch = (result) => {
                 element.remove()
         }); 
     }
-     cross.addEventListener('click', clear) 
+     cross.addEventListener('click', clear)//  usuwa tylko pierwszy x
 }
 
 

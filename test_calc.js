@@ -8,7 +8,7 @@ const error = document.querySelector('.error');
 const arch = document.querySelector('.archives');
 const medium = document.querySelector('.medium');
 const cross = document.querySelector('.fa-solid');
-
+const btnDel = document.querySelector('.btn-del')
 
 const checkError = () => {
     if (nameUser.value == '' || testmax.value == 0 || scoreStudent == 0) {
@@ -33,7 +33,7 @@ const addArch = (result) => {
     result = countScore()
     const li = document.createElement('li');
     
-    li.innerHTML = `<button>${nameUser.value} - Wynik: ${scoreStudent.value} punktów. Procent: ${result.toFixed(1)}%. <i class="fa-solid fa-xmark"></i></button>`;
+    li.innerHTML = `<button>${nameUser.value} - Wynik: ${scoreStudent.value} punktów. Procent: ${result.toFixed(1)}%. </i></button>`;
     arch.appendChild(li);
     let arrList = Array.from(arch.children, li => li.innerHTML)//tablica z archiwum
     scorePercent.textContent = '';
@@ -60,21 +60,17 @@ const addArch = (result) => {
     let finalResult = newArr / arr.length;
     medium.textContent = `${finalResult.toFixed(1)} %`
 
-
-    const cross = document.querySelector('.fa-solid');
     const list = document.querySelectorAll('.archives li');
 
-    for (let i = 0; i < arrList.length; i++) {
-        let resLen = arrList[i]
-    }
-    const clear = () => {
+    const clear = () => {// usuwanie wszystkich wierszy
         list.forEach((element) => {
-                element.remove()
+                element.remove();
+                medium.textContent = '';
         }); 
     }
-     cross.addEventListener('click', clear)//  usuwa tylko pierwszy x
+    btnDel.addEventListener('click', clear);
 }
 
 
-btnCount.addEventListener('click', checkError)
-btnAdd.addEventListener('click', addArch)
+btnCount.addEventListener('click', checkError);
+btnAdd.addEventListener('click', addArch);

@@ -64,6 +64,7 @@ input:hover {
 }
 
 .score-percent {
+    margin-left: 20px;
     font-size: 26px;
 }
 
@@ -71,16 +72,20 @@ input:hover {
     display: flex;
     align-items: center;
     flex-direction: row;
-    margin: 20px 10px;
+    margin: 20px 0px;
 }
 
 .score-percent p {
-    margin-left: 20px;
+    margin-left: 0px;
+}
+
+button {
+    cursor: pointer;
+    font-size: 20px;
 }
 
 .btn-count {
     padding: 10px 20px;
-    font-size: 26px;
     text-align: center;
     border: 3px solid #385170;
     background-color: #9fd3c7;
@@ -91,12 +96,14 @@ input:hover {
 
 .add{
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
+
 }
 
-.btn-add {
+.btn-add,
+.btn-del,
+.btn-last {
     padding: 10px 20px;
-    font-size: 26px;
     text-align: center;
     border: 3px solid #385170;
     background-color: #9fd3c7;
@@ -147,7 +154,6 @@ i:hover {
 .btn-med {
     margin-bottom: 20px;
     padding: 10px 20px;
-    font-size: 26px;
     text-align: center;
     border: 3px solid #385170;
     background-color: #9fd3c7;

@@ -1,6 +1,6 @@
 :root {
     --yellow: #feffdf;
-    --darkyellow: #ffe79a;
+    --darkyellow: #ebcbae;
     --orange: #ffa952;
     --red: #ef5a5a;
 }
@@ -38,6 +38,7 @@ header {
 
 header h1 {
     font-weight: bold;
+    color: #746f6f;
 }
 main {
     width: 500px;
@@ -100,6 +101,7 @@ button {
     display: flex;
     justify-content: center;
     margin-bottom: 10px;
+    visibility: hidden;
 }
 .med {
     display: flex;
@@ -143,19 +145,9 @@ button:hover {
     text-align: left;
 }
 
-i {
-    color: red;
-    cursor: pointer;
-    transition: all .5s;
-}
-i:hover {
-    color: black;
-}
-
 .score {
     display: none;
 }
-
 
 .archives li button{
     width: 100%;

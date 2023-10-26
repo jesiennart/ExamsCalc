@@ -14,38 +14,37 @@
 <body>
     <div class="container">
         <Header>
-            <h1>Test Kalkulator</h1>
+            <h1>Exam Calculator</h1>
         </Header>
         <main>
             <div class="form">
-                <label for="input-name">Imię i nazwisko:</label>
-                <input type="text" id="input-name" class="input-name" placeholder="Podaj imię i nazwisko">
+                <label for="input-name">First name and last name:</label>
+                <input type="text" id="input-name" class="input-name" placeholder="Enter student's name">
             </div>
             <div class="form">
-                <label for="testmax">Maksymalna liczba punktów:</label>
-                <input type="text" id="testmax" class="textmax" placeholder="Podaj maksymalną liczbę punktów">
+                <label for="testmax">Maximum score:</label>
+                <input type="text" id="testmax" class="textmax" placeholder="Enter maximum test points">
             </div>
             <div class="form">
-                <label for="score-student">Wynik ucznia:</label>
-                <input type="text" id="score-student" class="score-student" placeholder="Podaj liczbę uzyskanych punktów">
+                <label for="score-student">Sudent's score:</label>
+                <input type="text" id="score-student" class="score-student" placeholder="Enter student's score">
             </div>
-            <div class="error">Wypełnij wszystkie pola</div>
+            <div class="error">Enter all fields!</div>
             <div class="count">
-                <button class="btn-count">Oblicz</button>
+                <button class="btn-count">Calculate</button>
                <div class="score-percent">
-                <p>Wynik w procentach: <span class="final-score"></span></p>
+                <p>Score percentage: <span class="final-score"></span></p>
                 </div>  
             </div>
             <div class="add">
-                <button class="btn-add">Dodaj</button>
+                <button class="btn-add">Add</button>
             </div>
         </main>
-        <ol class="archives">Lista Wyników:</ol>
+        <ol class="archives">Score Archives:</ol>
         <div class="med">
-            <button class="btn-med">Mediana: <span class="medium"></span></button>
-            <button class="btn-del">Usuń</button>
+            <button class="btn-med">Medium: <span class="medium"></span></button>
+            <button class="btn-del">Clear All</button>
         </div>
-        <div class="cross"><i class="fa-solid fa-xmark"></i></div>
     </div>
 
 

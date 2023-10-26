@@ -10,13 +10,12 @@ const medium = document.querySelector('.medium');
 const cross = document.querySelector('.fa-solid');
 const btnDel = document.querySelector('.btn-del');
 const list = document.querySelectorAll('.archives li');
-const pScore = document.querySelectorAll('.score p');
 
 // Sprawdzanie poprawności wypełnienia formularza
 const checkError = () => {
     if (nameUser.value == '' || testmax.value == 0 || scoreStudent == 0) {
         error.style.visibility = 'visible';
-        error.textContent = 'Wypełnij wszystkie pola';
+        error.textContent = 'Enter all fields!';
     } else {
          error.style.visibility = 'hidden';
          countScore();   
@@ -30,17 +29,19 @@ const countScore = () => {
     
     const result = b / (a * 0.1) * 10
     scorePercent.textContent = `${result.toFixed(1)} %`;
+    btnAdd.style.visibility = 'visible';
+
     return result; 
 }
 
 //funkcja tworząca archiwum wyników
-const addArch = (result) => {
+const addArch = () => {
     result = countScore();
 
     // tworzenie li z wynikiem w archiwum
     const li = document.createElement('li');
     li.classList.add('li-arch');
-    li.innerHTML = `<button class="remove-item">${nameUser.value} - Wynik: ${scoreStudent.value} pkt. Procent: ${result.toFixed(1)}%. </button><i class="fa-solid fa-xmark"></i>`;
+    li.innerHTML = `<button class="remove-item">${nameUser.value} - Wynik: ${scoreStudent.value} pkt. Procent: ${result.toFixed(1)}%. </button>`;
     
     arch.appendChild(li);
 
@@ -48,6 +49,7 @@ const addArch = (result) => {
     scorePercent.textContent = '';
     nameUser.value = '';
     scoreStudent.value = '';
+    btnAdd.style.visibility = 'hidden';
 
     // Wydzielenie z li samego wyniku i stworzenie tablicy wyników
     let score = result.toFixed(1);
@@ -56,7 +58,7 @@ const addArch = (result) => {
     let arrNumber = Number(arrSc);
     console.log(arrNumber);
 
-    // Stworzenie span z samymi wynikami
+    // Stworzenie span z samymi wynikami i umieszczenie w li
     const btnRemove = document.querySelector('.remove-item')
     const span = document.createElement('span');
     span.classList.add('remove-span')
@@ -66,7 +68,7 @@ const addArch = (result) => {
     
     // funkcja licząca średnią z wyników
     const medScor = () => {
-        let arr = Array.from(btnRemove.children, mleko => mleko.textContent);// tworzy z p tablicę
+        let arr = Array.from(btnRemove.children, el => el.textContent);// tworzy z p tablicę
         let res = arr.map(i => Number(i))// zamienia string w tablicy w number
         console.log(res);
         let newArr = res.reduce((acc, cur) => acc + cur);
@@ -75,15 +77,6 @@ const addArch = (result) => {
     }
     medScor()
 
-    // usuwanie wyniku z score p
-    const pScore = document.querySelectorAll('.score p');
-    const clear = () => {
-        pScore.forEach((element) => {
-                element.remove();
-                medium.textContent = '';
-                testmax.value = '';
-        }); 
-    }
     //usuwanie listy wyników z ol li
     const list = document.querySelectorAll('.archives li');
     const clearP = () => {
@@ -93,15 +86,15 @@ const addArch = (result) => {
                 testmax.value = '';
         }); 
     }
-    btnDel.addEventListener('click', clear);
     btnDel.addEventListener('click', clearP);
 
     //usuwanie pojedyńczego wiersza
     const removeItem = (e) => {
         if (e.target.parentElement.classList.contains('li-arch')) {
             e.target.parentElement.remove();
-            medScor(); 
+           medScor(); 
         }
+        
     }
     li.addEventListener('click', removeItem);
     

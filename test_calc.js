@@ -41,7 +41,7 @@ const addArch = () => {
     // tworzenie li z wynikiem w archiwum
     const li = document.createElement('li');
     li.classList.add('li-arch');
-    li.innerHTML = `<button class="remove-item">${nameUser.value} - Wynik: ${scoreStudent.value} pkt. Procent: ${result.toFixed(1)}%. </button>`;
+    li.innerHTML = `<button class="remove-item">${nameUser.value} - Score: ${scoreStudent.value} pkt. Percentage: ${result.toFixed(1)}%. </button>`;
     
     arch.appendChild(li);
 

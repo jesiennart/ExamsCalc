@@ -5,7 +5,6 @@
     --red: #ef5a5a;
 }
 
-
 * {
     margin: 0;
     padding: 0;
@@ -17,8 +16,7 @@ body {
     top: 5%;
     left: 50%;
     transform: translate(-50%);
-    height: 100vh;
-    background-color: var(--yellow);
+    background: #DDD6F3;
     font-family: Poppins, Arial, Helvetica, sans-serif;
 }
 
@@ -28,7 +26,6 @@ body {
     justify-content: center;
     align-items: center;
     min-width: 700px;
-    background-color: var(--darkyellow);
     border-radius: 15px;
 }
 
@@ -38,7 +35,7 @@ header {
 
 header h1 {
     font-weight: bold;
-    color: #746f6f;
+    color: var(--orange);
 }
 main {
     width: 500px;
@@ -95,6 +92,7 @@ input:focus {
 button {
     cursor: pointer;
     font-size: 20px;
+    text-align: center;
 }
 
 .add {
@@ -118,6 +116,12 @@ button {
     color: black;
     border-radius:  5px;
     transition: all .5s;
+}
+.remove-item {
+    padding: 5px;
+    text-align: left;
+    font-size: 20px;
+    cursor: auto;
 }
 
 button:hover {
@@ -156,7 +160,7 @@ button:hover {
     color: black;
     font-size: 20px;
     border: none;
-    background-color: var(--darkyellow);
+    background-color: #eeeaf7;
     transition: all .5s;
 }
 
@@ -166,4 +170,113 @@ button:hover {
 
 .remove-span {
     display: none;
+}
+
+@media (min-width: 260px) {
+    body {
+        top: 2.5%;
+    }
+    .container {
+        min-width: 350px;
+    }
+    main {
+        width: 270px;
+    }
+    .form label {
+        font-size: 16px;
+        margin-bottom: 10px;   
+    }
+    .form input {
+        font-size: 16px;
+    }
+    .score-percent {
+        margin-left: 10px;
+        font-size: 16px;
+    }
+    button {
+        font-size: 16px;
+        text-align: center;
+    }
+    .archives {
+        width: 90%;
+        margin: 20px 10px;
+        font-size: 16px;
+    }
+    .error {
+        color: red;
+        margin: 20px 10px;
+        text-align: center;
+        font-size: 16px;
+        visibility: hidden;
+    }
+    .archives li {
+        margin-left: 15px;
+        margin-top: 5px;
+        font-size: 16px;
+        text-align: left;
+    }
+    .archives li button{
+        font-size: 16px;
+    }
+}
+
+@media (min-width: 768px) {
+    body {
+        top: 5%;
+    }
+    .container {
+        min-width: 650px;
+    }
+    main {
+        width: 550px;
+    }
+    .form label {
+        font-size: 24px;
+        margin-bottom: 10px;   
+    }
+    .form input {
+        font-size: 24px;
+    }
+    .score-percent {
+        margin-left: 30px;
+        font-size: 24px;
+    }
+    button {
+        font-size: 24px;
+        text-align: center;
+    }
+    .remove-item {
+        font-size: 20px;
+    }
+    .archives {
+        width: 90%;
+        margin: 20px 10px;
+        font-size: 24px;
+    }
+    .error {
+        color: red;
+        margin: 20px 10px;
+        text-align: center;
+        font-size: 24px;
+        visibility: hidden;
+    }
+    .archives li {
+        margin-left: 15px;
+        margin-top: 5px;
+        font-size: 20px;
+        text-align: left;
+    }
+    .archives li button{
+        font-size: 20px;
+    }
+}
+@media (min-width: 820px) {
+    body {
+        top: 5%;
+    }
+}
+@media (min-width: 1000px) {
+    body {
+        top: 5%;
+    }
 }

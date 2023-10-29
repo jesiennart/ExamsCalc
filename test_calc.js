@@ -56,7 +56,6 @@ const addArch = () => {
     let arrScore = Array.from(score);
     let arrSc = arrScore.reduce((acc, cur) => acc + cur);
     let arrNumber = Number(arrSc);
-    console.log(arrNumber);
 
     // Stworzenie span z samymi wynikami i umieszczenie w li
     const btnRemove = document.querySelector('.remove-item')
@@ -70,7 +69,6 @@ const addArch = () => {
     const medScor = () => {
         let arr = Array.from(btnRemove.children, el => el.textContent);// tworzy z p tablicę
         let res = arr.map(i => Number(i))// zamienia string w tablicy w number
-        console.log(res);
         let newArr = res.reduce((acc, cur) => acc + cur);
         let finalResult = newArr / arr.length;
     medium.textContent = `${finalResult.toFixed(1)} %`
@@ -86,18 +84,7 @@ const addArch = () => {
                 testmax.value = '';
         }); 
     }
-    btnDel.addEventListener('click', clearP);
-
-    //usuwanie pojedyńczego wiersza
-    const removeItem = (e) => {
-        if (e.target.parentElement.classList.contains('li-arch')) {
-            e.target.parentElement.remove();
-           medScor(); 
-        }
-        
-    }
-    li.addEventListener('click', removeItem);
-    
+    btnDel.addEventListener('click', clearP);  
 }
 
 

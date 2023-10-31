@@ -12,10 +12,6 @@
 }
 
 body {
-    position: absolute;
-    top: 5%;
-    left: 50%;
-    transform: translate(-50%);
     background: #DDD6F3;
     font-family: Poppins, Arial, Helvetica, sans-serif;
 }
@@ -23,9 +19,8 @@ body {
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
-    min-width: 700px;
     border-radius: 15px;
 }
 
@@ -51,18 +46,19 @@ main {
 
 .form label {
     width: 100%;
-    font-size: 20px;
     margin-bottom: 10px;
-    font-size: 26px;
-    
+    font-size: 24px;
 }
+
 .form input {
     width: 100%;
-    font-size: 20px;
     padding: 5px;
-    border-radius: 5px;
     border: 2px solid #ffa952;
+    border-left: none;
+    border-top: none;
+    border-right: none;
     transition: all .5s;
+    background-color: transparent;
 }
 
 input:hover {
@@ -70,7 +66,11 @@ input:hover {
 }
 input:focus {
     outline: none;
+    background-color: #feffdf;
     border: 2px solid #ef5a5a;
+    border-left: none;
+    border-top: none;
+    border-right: none;
 }
 
 .score-percent {
@@ -105,7 +105,7 @@ button {
     display: flex;
     justify-content: space-around;
     width: 80%;
-    margin-bottom: 30px;
+    margin-bottom: 80px;
 }
 
 button {
@@ -156,7 +156,7 @@ button:hover {
 .archives li button{
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start;
     color: black;
     font-size: 20px;
     border: none;
@@ -172,15 +172,61 @@ button:hover {
     display: none;
 }
 
-@media (min-width: 260px) {
-    body {
-        top: 2.5%;
-    }
-    .container {
-        min-width: 350px;
-    }
+@media (min-width: 280px) {
     main {
         width: 270px;
+    }
+    .form label {
+        font-size: 16px;
+        margin-bottom: 10px;   
+    }
+    .form input {
+        font-size: 16px;
+    }
+    .score-percent {
+        margin-left: 10px;
+        font-size: 16px;
+    }
+    button {
+        font-size: 16px;
+        text-align: center;
+    }
+    .archives {
+        width: 90%;
+        margin: 20px 10px;
+        font-size: 16px;
+    }
+    .error {
+        color: red;
+        margin: 20px 10px;
+        text-align: center;
+        font-size: 16px;
+        visibility: hidden;
+    }
+    .archives li {
+        margin-left: 15px;
+        margin-top: 5px;
+        font-size: 16px;
+        text-align: left;
+    }
+    .archives li button{
+        font-size: 16px;
+    }
+}
+@media (min-width: 450px) {
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        top: 5%;
+    }
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    main {
+        width: 450px;
     }
     .form label {
         font-size: 16px;
@@ -272,11 +318,14 @@ button:hover {
 }
 @media (min-width: 820px) {
     body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
         top: 5%;
     }
-}
-@media (min-width: 1000px) {
-    body {
-        top: 5%;
+    .container {
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 }

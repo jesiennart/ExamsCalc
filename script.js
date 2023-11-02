@@ -1,92 +1,90 @@
-const nameUser = document.querySelector('#input-name');
-const testmax = document.querySelector('#testmax');
-const scoreStudent = document.querySelector('#score-student');
-const scorePercent = document.querySelector('.final-score');
-const btnCount = document.querySelector('.btn-count');
-const btnAdd = document.querySelector('.btn-add');
-const error = document.querySelector('.error');
-const arch = document.querySelector('.archives');
-const medium = document.querySelector('.medium');
-const cross = document.querySelector('.fa-solid');
-const btnDel = document.querySelector('.btn-del');
-const list = document.querySelectorAll('.archives li');
+const nameUser = document.querySelector("#input-name");
+const testmax = document.querySelector("#testmax");
+const scoreStudent = document.querySelector("#score-student");
+const scorePercent = document.querySelector(".final-score");
+const btnCount = document.querySelector(".btn-count");
+const btnAdd = document.querySelector(".btn-add");
+const error = document.querySelector(".error");
+const arch = document.querySelector(".archives");
+const medium = document.querySelector(".medium");
+const btnDel = document.querySelector(".btn-del");
+const list = document.querySelectorAll(".archives li");
 
-// Sprawdzanie poprawności wypełnienia formularza
+// Check form
 const checkError = () => {
-    if (nameUser.value == '' || testmax.value == 0 || scoreStudent == 0) {
-        error.style.visibility = 'visible';
-        error.textContent = 'Enter all fields!';
-    } else {
-         error.style.visibility = 'hidden';
-         countScore();   
-    }
-}
-// liczenie wyniku
+  if (nameUser.value == "" || testmax.value == 0 || scoreStudent == 0) {
+    error.style.visibility = "visible";
+    error.textContent = "Enter all fields!";
+  } else {
+    error.style.visibility = "hidden";
+    countScore();
+  }
+};
+// Counting the score
 const countScore = () => {
-    
-    const a = Number(testmax.value)
-    const b = Number(scoreStudent.value)
-    
-    const result = b / (a * 0.1) * 10
-    scorePercent.textContent = `${result.toFixed(1)} %`;
-    btnAdd.style.visibility = 'visible';
+  const a = Number(testmax.value);
+  const b = Number(scoreStudent.value);
 
-    return result; 
-}
+  const result = (b / (a * 0.1)) * 10;
+  scorePercent.textContent = `${result.toFixed(1)} %`;
+  btnAdd.style.visibility = "visible";
 
-//funkcja tworząca archiwum wyników
+  return result;
+};
+
+//Creating Archives
 const addArch = () => {
-    result = countScore();
+  result = countScore();
 
-    // tworzenie li z wynikiem w archiwum
-    const li = document.createElement('li');
-    li.classList.add('li-arch');
-    li.innerHTML = `<button class="remove-item">${nameUser.value} - Score: ${scoreStudent.value} pkt. Percentage: ${result.toFixed(1)}%. </button>`;
-    
-    arch.appendChild(li);
+  // Li in archives
+  const li = document.createElement("li");
+  li.classList.add("li-arch");
+  li.innerHTML = `<button class="remove-item">${nameUser.value} - Score: ${
+    scoreStudent.value
+  } pkt. Percentage: ${result.toFixed(1)}%. </button>`;
 
-    let arrList = Array.from(arch.children, li => li.innerHTML)//tablica z archiwum
-    scorePercent.textContent = '';
-    nameUser.value = '';
-    scoreStudent.value = '';
-    btnAdd.style.visibility = 'hidden';
+  arch.appendChild(li);
 
-    // Wydzielenie z li samego wyniku i stworzenie tablicy wyników
-    let score = result.toFixed(1);
-    let arrScore = Array.from(score);
-    let arrSc = arrScore.reduce((acc, cur) => acc + cur);
-    let arrNumber = Number(arrSc);
+  let arrList = Array.from(arch.children, (li) => li.innerHTML); //Array with li in archives
+  scorePercent.textContent = "";
+  nameUser.value = "";
+  scoreStudent.value = "";
+  btnAdd.style.visibility = "hidden";
 
-    // Stworzenie span z samymi wynikami i umieszczenie w li
-    const btnRemove = document.querySelector('.remove-item')
-    const span = document.createElement('span');
-    span.classList.add('remove-span')
-    span.textContent = arrNumber;
-    btnRemove.appendChild(span)
+  // Array with only scores
+  let score = result.toFixed(1);
+  let arrScore = Array.from(score);
+  let arrSc = arrScore.reduce((acc, cur) => acc + cur);
+  let arrNumber = Number(arrSc);
 
-    
-    // funkcja licząca średnią z wyników
-    const medScor = () => {
-        let arr = Array.from(btnRemove.children, el => el.textContent);// tworzy z p tablicę
-        let res = arr.map(i => Number(i))// zamienia string w tablicy w number
-        let newArr = res.reduce((acc, cur) => acc + cur);
-        let finalResult = newArr / arr.length;
-    medium.textContent = `${finalResult.toFixed(1)} %`
-    }
-    medScor()
+  // Span with scores putting into Li
+  const btnRemove = document.querySelector(".remove-item");
+  const span = document.createElement("span");
+  span.classList.add("remove-span");
+  span.textContent = arrNumber;
+  btnRemove.appendChild(span);
 
-    //usuwanie listy wyników z ol li
-    const list = document.querySelectorAll('.archives li');
-    const clearP = () => {
-        list.forEach((element) => {
-                element.remove();
-                medium.textContent = '';
-                testmax.value = '';
-        }); 
-    }
-    btnDel.addEventListener('click', clearP);  
-}
+  // medium from all scores
+  const medScor = () => {
+    let arr = Array.from(btnRemove.children, (el) => el.textContent); // Array with scores from span
+    let res = arr.map((i) => Number(i)); // string to number
+    let newArr = res.reduce((acc, cur) => acc + cur);
+    let finalResult = newArr / arr.length;
+    medium.textContent = `${finalResult.toFixed(1)} %`;
+  };
+  medScor();
 
+  //deleting archives
+  const list = document.querySelectorAll(".archives li");
+  const clearP = () => {
+    list.forEach((element) => {
+      element.remove();
+      medium.textContent = "";
+      testmax.value = "";
+    });
+  };
+  btnDel.addEventListener("click", clearP);
+};
 
-btnCount.addEventListener('click', checkError);
-btnAdd.addEventListener('click', addArch);
+btnCount.addEventListener("click", checkError);
+btnAdd.addEventListener("click", addArch);

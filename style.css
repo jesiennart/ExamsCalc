@@ -1,331 +1,320 @@
 :root {
-    --yellow: #feffdf;
-    --darkyellow: #ebcbae;
-    --orange: #ffa952;
-    --red: #ef5a5a;
+  --yellow: #feffdf;
+  --darkyellow: #ebcbae;
+  --orange: #ffa952;
+  --red: #ef5a5a;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    background: #DDD6F3;
-    font-family: Poppins, Arial, Helvetica, sans-serif;
+  background: #ddd6f3;
+  font-family: Poppins, Arial, Helvetica, sans-serif;
 }
 
 .container {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  border-radius: 15px;
 }
 
 header {
-    margin: 20px;
+  margin: 20px;
 }
 
 header h1 {
-    font-weight: bold;
-    color: var(--orange);
+  font-weight: bold;
+  color: var(--orange);
 }
 main {
-    width: 500px;
+  width: 500px;
 }
 
 .form {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-    margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 10px;
 }
 
 .form label {
-    width: 100%;
-    margin-bottom: 10px;
-    font-size: 24px;
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 24px;
 }
 
 .form input {
-    width: 100%;
-    padding: 5px;
-    border: 2px solid #ffa952;
-    border-left: none;
-    border-top: none;
-    border-right: none;
-    transition: all .5s;
-    background-color: transparent;
+  width: 100%;
+  padding: 5px;
+  border: 2px solid #ffa952;
+  border-left: none;
+  border-top: none;
+  border-right: none;
+  transition: all 0.5s;
+  background-color: transparent;
 }
 
 input:hover {
-    background-color: #feffdf;
+  background-color: #feffdf;
 }
 input:focus {
-    outline: none;
-    background-color: #feffdf;
-    border: 2px solid #ef5a5a;
-    border-left: none;
-    border-top: none;
-    border-right: none;
+  outline: none;
+  background-color: #feffdf;
+  border: 2px solid #ef5a5a;
+  border-left: none;
+  border-top: none;
+  border-right: none;
 }
 
 .score-percent {
-    margin-left: 20px;
-    font-size: 26px;
+  margin-left: 20px;
+  font-size: 26px;
 }
 
 .count {
-    display: flex;
-    align-items: center;
-    flex-direction: row;
-    margin: 20px 0px;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  margin: 20px 0px;
 }
 
 .score-percent p {
-    margin-left: 0px;
+  margin-left: 0px;
 }
 
 button {
-    cursor: pointer;
-    font-size: 20px;
-    text-align: center;
+  cursor: pointer;
+  font-size: 20px;
+  text-align: center;
 }
 
 .add {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 10px;
-    visibility: hidden;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  visibility: hidden;
 }
 .med {
-    display: flex;
-    justify-content: space-around;
-    width: 80%;
-    margin-bottom: 80px;
+  display: flex;
+  justify-content: space-around;
+  width: 80%;
+  margin-bottom: 80px;
 }
 
 button {
-    padding: 10px 20px;
-    text-align: center;
-    border: 2px solid #ffa952;
-    background-color: var(--yellow);
-    color: black;
-    border-radius:  5px;
-    transition: all .5s;
+  padding: 10px 20px;
+  text-align: center;
+  border: 2px solid #ffa952;
+  background-color: var(--yellow);
+  color: black;
+  border-radius: 5px;
+  transition: all 0.5s;
 }
 .remove-item {
-    padding: 5px;
-    text-align: left;
-    font-size: 20px;
-    cursor: auto;
+  padding: 5px;
+  text-align: left;
+  font-size: 20px;
+  cursor: auto;
 }
 
 button:hover {
-    background-color: var(--orange);
+  background-color: var(--orange);
 }
 .archives {
-    width: 90%;
-    margin: 30px 10px;
-    font-size: 22px;
-    font-weight: bold;
-    text-align: center;
+  width: 90%;
+  margin: 30px 10px;
+  font-size: 22px;
+  font-weight: bold;
+  text-align: center;
 }
 .error {
-    color: red;
-    margin: 20px 10px;
-    text-align: center;
-    font-size: 20px;
-    visibility: hidden;
+  color: red;
+  margin: 20px 10px;
+  text-align: center;
+  font-size: 20px;
+  visibility: hidden;
 }
 .archives li {
-    margin-left: 25px;
-    margin-top: 5px;
-    font-weight: normal;
-    font-size: 22px;
-    text-align: left;
+  margin-left: 25px;
+  margin-top: 5px;
+  font-weight: normal;
+  font-size: 22px;
+  text-align: left;
 }
 
 .score {
-    display: none;
+  display: none;
 }
 
-.archives li button{
-    width: 100%;
-    display: flex;
-    justify-content: flex-start;
-    color: black;
-    font-size: 20px;
-    border: none;
-    background-color: #eeeaf7;
-    transition: all .5s;
+.archives li button {
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  color: black;
+  font-size: 20px;
+  border: none;
+  background-color: #eeeaf7;
+  transition: all 0.5s;
 }
 
 .cross {
-    display: none;
+  display: none;
 }
 
 .remove-span {
-    display: none;
+  display: none;
 }
 
 @media (min-width: 280px) {
-    main {
-        width: 270px;
-    }
-    .form label {
-        font-size: 16px;
-        margin-bottom: 10px;   
-    }
-    .form input {
-        font-size: 16px;
-    }
-    .score-percent {
-        margin-left: 10px;
-        font-size: 16px;
-    }
-    button {
-        font-size: 16px;
-        text-align: center;
-    }
-    .archives {
-        width: 90%;
-        margin: 20px 10px;
-        font-size: 16px;
-    }
-    .error {
-        color: red;
-        margin: 20px 10px;
-        text-align: center;
-        font-size: 16px;
-        visibility: hidden;
-    }
-    .archives li {
-        margin-left: 15px;
-        margin-top: 5px;
-        font-size: 16px;
-        text-align: left;
-    }
-    .archives li button{
-        font-size: 16px;
-    }
+  main {
+    width: 270px;
+  }
+  .form label {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .form input {
+    font-size: 16px;
+  }
+  .score-percent {
+    margin-left: 10px;
+    font-size: 16px;
+  }
+  button {
+    font-size: 16px;
+    text-align: center;
+  }
+  .archives {
+    width: 90%;
+    margin: 20px 10px;
+    font-size: 16px;
+  }
+  .error {
+    color: red;
+    margin: 20px 10px;
+    text-align: center;
+    font-size: 16px;
+    visibility: hidden;
+  }
+  .archives li {
+    margin-left: 15px;
+    margin-top: 5px;
+    font-size: 16px;
+    text-align: left;
+  }
+  .archives li button {
+    font-size: 16px;
+  }
 }
 @media (min-width: 450px) {
-    body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        top: 5%;
-    }
-    .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
-    main {
-        width: 450px;
-    }
-    .form label {
-        font-size: 16px;
-        margin-bottom: 10px;   
-    }
-    .form input {
-        font-size: 16px;
-    }
-    .score-percent {
-        margin-left: 10px;
-        font-size: 16px;
-    }
-    button {
-        font-size: 16px;
-        text-align: center;
-    }
-    .archives {
-        width: 90%;
-        margin: 20px 10px;
-        font-size: 16px;
-    }
-    .error {
-        color: red;
-        margin: 20px 10px;
-        text-align: center;
-        font-size: 16px;
-        visibility: hidden;
-    }
-    .archives li {
-        margin-left: 15px;
-        margin-top: 5px;
-        font-size: 16px;
-        text-align: left;
-    }
-    .archives li button{
-        font-size: 16px;
-    }
+  main {
+    width: 450px;
+  }
+  .form label {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+  .form input {
+    font-size: 16px;
+  }
+  .score-percent {
+    margin-left: 10px;
+    font-size: 16px;
+  }
+  button {
+    font-size: 16px;
+    text-align: center;
+  }
+  .archives {
+    width: 80%;
+    margin: 20px 10px;
+    font-size: 16px;
+  }
+  .error {
+    color: red;
+    margin: 20px 10px;
+    text-align: center;
+    font-size: 16px;
+    visibility: hidden;
+  }
+  .archives li {
+    margin-left: 15px;
+    margin-top: 5px;
+    font-size: 16px;
+    text-align: left;
+  }
+  .archives li button {
+    font-size: 16px;
+  }
 }
 
 @media (min-width: 768px) {
-    body {
-        top: 5%;
-    }
-    .container {
-        min-width: 650px;
-    }
-    main {
-        width: 550px;
-    }
-    .form label {
-        font-size: 24px;
-        margin-bottom: 10px;   
-    }
-    .form input {
-        font-size: 24px;
-    }
-    .score-percent {
-        margin-left: 30px;
-        font-size: 24px;
-    }
-    button {
-        font-size: 24px;
-        text-align: center;
-    }
-    .remove-item {
-        font-size: 20px;
-    }
-    .archives {
-        width: 90%;
-        margin: 20px 10px;
-        font-size: 24px;
-    }
-    .error {
-        color: red;
-        margin: 20px 10px;
-        text-align: center;
-        font-size: 24px;
-        visibility: hidden;
-    }
-    .archives li {
-        margin-left: 15px;
-        margin-top: 5px;
-        font-size: 20px;
-        text-align: left;
-    }
-    .archives li button{
-        font-size: 20px;
-    }
+  body {
+    top: 5%;
+  }
+  .container {
+    min-width: 650px;
+  }
+  main {
+    width: 550px;
+  }
+  .form label {
+    font-size: 24px;
+    margin-bottom: 10px;
+  }
+  .form input {
+    font-size: 24px;
+  }
+  .score-percent {
+    margin-left: 30px;
+    font-size: 24px;
+  }
+  button {
+    font-size: 24px;
+    text-align: center;
+  }
+  .remove-item {
+    font-size: 20px;
+  }
+  .archives {
+    width: 80%;
+    margin: 20px 10px;
+    font-size: 24px;
+  }
+  .error {
+    color: red;
+    margin: 20px 10px;
+    text-align: center;
+    font-size: 24px;
+    visibility: hidden;
+  }
+  .archives li {
+    margin-left: 15px;
+    margin-top: 5px;
+    font-size: 20px;
+    text-align: left;
+  }
+  .archives li button {
+    font-size: 20px;
+  }
 }
 @media (min-width: 820px) {
-    body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        top: 5%;
-    }
-    .container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-    }
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 5%;
+  }
+  .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
 }

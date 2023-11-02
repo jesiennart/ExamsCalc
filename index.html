@@ -1,53 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://kit.fontawesome.com/d7108e48b2.js"
-			crossorigin="anonymous"></script>
-            <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./test_calc.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://kit.fontawesome.com/d7108e48b2.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200&family=Poppins:wght@400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./style.css" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <Header>
-            <h1>Exam Calculator</h1>
-        </Header>
-        <main>
-            <div class="form">
-                <label for="input-name">First name and last name:</label>
-                <input type="text" id="input-name" class="input-name" placeholder="Enter student's name">
-            </div>
-            <div class="form">
-                <label for="testmax">Maximum score:</label>
-                <input type="text" id="testmax" class="textmax" placeholder="Enter maximum test points">
-            </div>
-            <div class="form">
-                <label for="score-student">Sudent's score:</label>
-                <input type="text" id="score-student" class="score-student" placeholder="Enter student's score">
-            </div>
-            <div class="error">Enter all fields!</div>
-            <div class="count">
-                <button class="btn-count">Calculate</button>
-               <div class="score-percent">
-                <p>Score percentage: <span class="final-score"></span></p>
-                </div>  
-            </div>
-            <div class="add">
-                <button class="btn-add">Add</button>
-            </div>
-        </main>
-        <ol class="archives">Score Archives:</ol>
-        <div class="med">
-            <button class="btn-med">Medium: <span class="medium"></span></button>
-            <button class="btn-del">Clear All</button>
+      <header>
+        <h1>Exam Calculator</h1>
+      </header>
+      <main>
+        <div class="form">
+          <label for="input-name">First name and last name:</label>
+          <input
+            type="text"
+            id="input-name"
+            class="input-name"
+            placeholder="Enter student's name"
+          />
         </div>
+        <div class="form">
+          <label for="testmax">Maximum score:</label>
+          <input
+            type="text"
+            id="testmax"
+            class="textmax"
+            placeholder="Enter maximum test points"
+          />
+        </div>
+        <div class="form">
+          <label for="score-student">Sudent's score:</label>
+          <input
+            type="text"
+            id="score-student"
+            class="score-student"
+            placeholder="Enter student's score"
+          />
+        </div>
+        <div class="error">Enter all fields!</div>
+        <div class="count">
+          <button class="btn-count">Calculate</button>
+          <div class="score-percent">
+            <p>Score percentage: <span class="final-score"></span></p>
+          </div>
+        </div>
+        <div class="add">
+          <button class="btn-add">Add</button>
+        </div>
+      </main>
+      <ol class="archives">
+        Score Archives:
+      </ol>
+      <div class="med">
+        <button class="btn-med">Medium: <span class="medium"></span></button>
+        <button class="btn-del">Clear All</button>
+      </div>
     </div>
 
-
-    <script src="./test_calc.js"></script>
-</body>
+    <script src="./script.js"></script>
+  </body>
 </html>

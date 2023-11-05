@@ -29,8 +29,11 @@ header {
 }
 
 header h1 {
+  font-size: 40px;
   font-weight: bold;
+  text-align: center;
   color: var(--orange);
+  text-shadow: 2px 2px 2px red;
 }
 main {
   width: 500px;
@@ -64,6 +67,11 @@ main {
 input:hover {
   background-color: #feffdf;
 }
+
+input:focus::placeholder {
+  color: transparent;
+}
+
 input:focus {
   outline: none;
   background-color: #feffdf;
